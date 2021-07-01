@@ -6,7 +6,7 @@ home = str(Path.home())
 path = os.path.join(home, "temp")
 print("working directory = " + path)
 new_hires = []
-with open(os.path.join(path, "All_MCD_Users.csv"), newline = '') as csvfile:
+with open(os.path.join(path, "All__org_Users.csv"), newline = '') as csvfile:
     reader = csv.DictReader(csvfile)
     with open(os.path.join(path, "2020_Hires_formatted.txt"), "r") as f:
         new_hires = f.read()
@@ -15,7 +15,7 @@ with open(os.path.join(path, "All_MCD_Users.csv"), newline = '') as csvfile:
 
 
 #        print(str(new_hires))
-    with open('mcd_infosec.csv', 'w', newline='') as newcsv:
+    with open('org_infosec.csv', 'w', newline='') as newcsv:
         fieldnames = ['first_name', 'last_name', 'email', 'group', 'title', 'department', 'phone', 'address1', 'address2', 'city', 'state', 'zip', 'country', 'custom', 'manager_name', 'manager_email', 'Infosec_IQ_start_date']
         writer = csv.DictWriter(newcsv, fieldnames = fieldnames)
         writer.writeheader()
