@@ -42,5 +42,5 @@ with open(os.path.join(path, "All__org_Users.csv"), newline = '') as csvfile:
 				    'manager_name': row['manager'],
 				    'manager_email': row['managerEmail']})
 
-if os.path.exists(os.path.join(path, "mcd_infosec.csv")):
+if os.path.exists(os.path.join(path, "org_infosec.csv")):
     print("CSV has been converted successfully. Please find it in: " + path)
