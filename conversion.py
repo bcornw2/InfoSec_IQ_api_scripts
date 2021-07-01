@@ -26,15 +26,15 @@ with open(os.path.join(path, "InfoSecEmployeesReport.csv"), newline='', encoding
 				print("last name will be: " + last_name)
 			else:
 				last_name = row['emp name'].split()[-1]
-			#variable "a" allows users with supervisors to have their email listed. Some users don't have supervisors. This if statement prevents users without supervisors from having just "@mcdean.com" as their supervisor email.
+			#variable "a" allows users with supervisors to have their email listed. Some users don't have supervisors. This if statement prevents users without supervisors from having just "@ORGANIZATION.com" as their supervisor email.
 			if row['Primary Evaluator Username'] == '':
 				a = ''
 			else:
-				a = '@mcdean.com'
+				a = '@ORGANIZATION.com'
 
-			#ADDENDUM 3/3/2021 - DEAN | FLUOR should and will be included, below lines commented out
-			#Dean/Fluor is a separate company that does not need to be enrolled in training.
-			#if "@deanfluor.com".lower() in row['Emp Email'].lower():
+			#ADDENDUM 3/3/2021 - ORGANIZATION 2  should and will be included, below lines commented out
+			#ORANIZATION 2  is a separate company that does not need to be enrolled in training.
+			#if "@RGANIZATION2.com".lower() in row['Emp Email'].lower():
 			#	pass
 
 			if "F".lower() in row["Office Field"].lower():
@@ -46,7 +46,7 @@ with open(os.path.join(path, "InfoSecEmployeesReport.csv"), newline='', encoding
 				writer.writerow({'first_name': row['emp name'].split(' ', 1)[0],
 						'last_name': last_name,
 						'email': row['Emp Email'],
-#						'email': row['emp_name'].split(' ', 1)[0]+"."+last_name+"@mcdean.com",
+#						'email': row['emp_name'].split(' ', 1)[0]+"."+last_name+"@ORGANIZATION.com",
 						'group': group, ##row['emp_division'],
 						'title': row['EMP TITLE'],
 						'department': row['emp dept'],
