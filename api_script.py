@@ -2,12 +2,12 @@ import requests
 import json
 import datetime
 
-# API Key: 32d01950-8108-47db-ae16-797b8e6f4171
+# API Key: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 def check_method(user_email):
     verified = False
     print("User Email: {}".format(user_email))
     url = 'https://securityiq.infosecinstitute.com/api/v1/learners'
-    headers = {"Authorization": "Bearer 32d01950-8108-47db-ae16-797b8e6f4171"}
+    headers = {"Authorization": "Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
     response = requests.get(url, headers=headers)
 
     #pass learner by email
